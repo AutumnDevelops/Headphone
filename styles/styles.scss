@@ -1,0 +1,613 @@
+*, *::before, *::after{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    transition: 1s;
+}
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400&family=Tektur:wght@500&display=swap');
+
+@mixin main_flex(){
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+li{
+    list-style-type: none;
+}
+
+
+
+$light_main_background:#ffffff;
+$light_nav_background:#d3d3d3;
+
+$dark_main_background:#554d57;
+$dark_nav_background:#0a0a0a;
+$dark_text:#c4c4c4;
+$dark_text_2:#e4e4e4;
+$box_shadow: 0px 5px 12.5px rgba(134, 134, 134, 0.5);
+
+
+
+$light_main_background: #a3a3a359;
+$light_nav_background:#ffffff;
+$light_text:#0a0a0a;
+$light_text_2:#242121;
+$box_shadow_light: 0px 5px 12.5px rgba(134, 134, 134, 0.5), 0px 5px 12.5px rgba(151, 132, 153, 0.5);
+
+$header_font:'Tektur', cursive;
+$main_font:'Raleway', sans-serif;
+
+@mixin hover(){
+background:$dark_text;
+color:$dark_nav_background;
+}
+
+::-webkit-scrollbar {
+width: 4px;
+box-shadow: $box_shadow;
+background: $dark_nav_background;
+}
+::-webkit-scrollbar-thumb {
+box-shadow: inset $box_shadow;
+background: $light_main_background;
+}
+
+
+body{
+height: 100vh;
+width: 100vw;
+background: $dark_main_background;
+overflow-x: hidden;
+&.light_mode{
+    background:$light_main_background;
+}}
+
+body .pop_up{
+@include main_flex();
+position: fixed;
+height: 100%;
+width: 100%;
+background: rgba(49, 49, 49, 0.8);
+z-index: 1111111;
+&.display_none{
+    display: none;
+}
+@media(max-width:750px){
+    width: 100%;
+}}
+
+body .pop_up .pop{
+@include main_flex();
+position: relative;
+height: 400px;
+width: 400px;
+border-radius: 25px;
+box-shadow: inset $box_shadow;
+border:7px solid black;
+color: $dark_text;
+background:$dark_nav_background;
+overflow: hidden;
+@media(max-width:750px){
+    width: 100%;
+    border-radius: 0px;
+}
+&.light_mode{
+    border:7px solid $dark_text_2;
+    box-shadow: inset $box_shadow_light;
+    color: $light_text;
+    background:$light_nav_background;  
+}}
+
+body .pop_up .pop .close_pop_up{
+position: absolute;
+top:20px;
+right: 20px;
+color:$dark_text;
+&:hover{
+    color:$dark_main_background;
+    cursor: pointer;
+}
+&.light_mode{
+    color:$light_text;
+&:hover{
+    color:$light_main_background;
+}}}
+
+body .pop_up .pop .img_pop{
+height: 100%;
+width: 80%;
+background: url(../img/new_headphones.png);
+background-position: center; 
+background-size: cover; 
+background-repeat: no-repeat;
+&.light_mode{
+    background: url(../img/new_headphones_light.png);
+    background-position: center; 
+    background-size: cover; 
+    background-repeat: no-repeat;
+}}
+
+body .pop_up .pop .unlock{
+text-align: center;
+}
+
+body .pop_up .pop .unlock .unlock_text{
+margin-bottom: 25px;
+font-family: $header_font;
+}
+
+body .pop_up .pop .unlock .email{
+outline:none;
+border:none;
+border-bottom: 2px solid $dark_text_2;
+color:$dark_text;
+background: none;
+&.light_mode{
+    border-bottom: 2px solid $light_text_2;
+    color:$light_text;
+}}
+
+body .pop_up .pop .unlock button{
+margin-top: 15px;
+padding: 5px 10px;
+font-family: $main_font;
+font-size: 15px;
+padding: 5px 10px;
+color:$dark_text;
+outline:none;
+border:none;
+border-radius: 5px;
+background: none;
+&:hover{
+    background: $dark_text_2;
+    color:$dark_nav_background;
+    cursor: pointer;
+}
+&.light_mode{
+    color:$light_text;
+}}
+
+body nav{
+position: fixed;
+width: 100%;
+height: 5%;
+display: flex;
+justify-content: space-between;
+align-items: center;
+box-shadow: $box_shadow;
+background: $dark_nav_background;
+z-index: 111111;
+&.light_mode{
+    box-shadow: $box_shadow_light;
+    background: $light_nav_background;
+    color:$light_text_2;
+}}
+
+body nav ul{
+display: flex;
+margin: 20px;
+}
+
+body nav ul li{
+padding: 5px 25px;
+font-size: 20px;
+color:$dark_text;
+cursor: pointer;
+&:hover{
+    color:$dark_text_2;
+    cursor: pointer;
+}
+&.light_mode{
+    color:$light_text;
+&:hover{
+    color:$dark_main_background;
+}}}
+
+body nav .menu_container{
+position: absolute;
+top: 75px;
+right: 0;
+height: 370px;
+width: 400px;
+border-top-left-radius:25px;
+border-bottom-left-radius:25px;
+box-shadow: $box_shadow;
+background: $dark_nav_background;
+transition: 0.5s;
+&.light_mode{
+    box-shadow: $box_shadow_light;
+    background: $light_nav_background;
+}
+&.display_none{
+    right: -400px;
+ }
+@media(max-width:759px){
+    width: 100%;
+    top:200px;
+&.display_none{
+    right: -500px;
+}}}
+
+body nav .menu_container .close_container{
+position: absolute;
+top:18px;
+right:30px;
+color:$dark_main_background;
+&:hover{
+    color:$dark_text_2;
+    cursor: pointer;
+&.light_mode{
+    background:$light_main_background;
+    &:hover{
+    color:$light_text_2;
+}}}}
+
+body nav .menu_container ul{
+height: 250px;
+margin-top: 50px;
+display: flex;
+flex-direction: column;
+border-top: 2px solid $dark_main_background;
+border-bottom: 2px solid $dark_main_background;
+overflow-y: auto;
+&.light_mode{
+    border-top: 2px solid $light_main_background;
+    border-bottom: 2px solid $light_main_background;
+}}
+
+
+body nav .menu_container ul li{
+margin: 20px;
+height: 60px;
+border-radius:5px;
+display: flex;
+justify-content: center;
+background: #554d57;
+font-size: 12px;
+&.light_mode{
+    background: $dark_text;
+    color:$light_text_2;
+}}
+
+body nav .menu_container ul li .img_area img{
+height: 50px;
+width:50px;
+border-radius: 5px;
+}
+
+body nav .menu_container ul li .menu_list{
+height: 100%;
+padding-left: 20px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+font-family: $main_font;
+}
+
+
+
+body nav .menu_container ul li .remove_item{
+height: 100%;
+display: flex;
+align-items: center;
+padding:5px;
+font-size: 14px;
+}
+
+body nav .menu_container .box_area{
+display: flex;
+align-items: center;
+justify-content: space-around;
+}
+
+body nav .menu_container .box_area .box_total{
+display: flex;
+font-family: $main_font;
+color:$dark_text;
+&.light_mode{
+    color:$light_text;  
+}}
+
+body nav .menu_container .box_area .button_box{
+display: flex;
+height: 40px;
+}
+
+body nav .menu_container .box_area .button_box button{
+padding: 5px;
+margin-right: 25px;
+outline:none;
+border: none;
+border-radius: 5px;
+background: $dark_main_background;
+color:white;
+&.light_mode{
+    color:white;
+    background: $dark_main_background;
+&:hover{
+    color:$dark_text;
+    background: $light_main_background;
+}}
+&:hover{
+    @include hover();
+    cursor: pointer
+}}
+
+
+body header{
+@include main_flex();
+position: relative;
+height: 55%;
+font-family: $header_font;
+border-bottom: 20px solid $dark_nav_background;
+box-shadow: $box_shadow;
+overflow: hidden;
+&.light_mode{
+    border-bottom: 20px solid $light_nav_background;
+    box-shadow: $box_shadow_light;
+}
+@media(max-width:750px){
+    width: 100%;
+    height: 75%;
+}
+&::before{
+    content: "";
+    position: absolute;
+     top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: url(../img/hero.png);
+    background-position: center; 
+    background-size: cover; 
+    background-repeat: no-repeat;
+}
+&.light_mode{
+    &::before{
+        background: url(../img/hero_light.png);
+        background-position: center; 
+        background-size: cover; 
+        background-repeat: no-repeat;
+}}}
+
+body header div{
+@include main_flex();
+flex-direction: column;
+background: #0a0a0a67;
+padding: 25px;
+border-radius: 25px;
+z-index: 11111;
+@media(max-width:750px){
+        text-align: center;
+        padding: 15px;
+}
+&.light_mode{
+    background: #e2e2e267;
+}}
+
+body header div h1{
+font-family: $header_font;
+}
+
+body header div h2{
+font-family: $main_font;
+}
+
+body main{
+@include main_flex();
+flex-direction: column;
+width: 100%;
+}
+
+body main ul{
+@include main_flex();
+height: 10%;
+padding: 20px;
+border-bottom: 5px solid $dark_nav_background;
+@media(max-width:750px){
+    flex-wrap: wrap;
+}
+&.light_mode{
+    border-bottom: 5px solid $light_nav_background;
+}}
+
+body .sorting_section{
+position: fixed;
+left: 0px;
+top: 70px;
+padding: 16px;
+height: 100px;
+width: 150px;
+display: flex;
+flex-direction: column;
+box-shadow: $box_shadow;
+border-radius: 6px;
+border-top-left-radius: 0px;
+border-bottom-left-radius: 0px;
+font-size: 17px;
+font-family: $header_font;
+color: $dark_text;
+background: $dark_nav_background;
+z-index: 111111;
+&.light_mode{
+    box-shadow: $box_shadow_light;
+    color: $light_text;
+    background: $light_nav_background;
+}}
+
+body .sorting_section label{
+padding-left: 5px;
+padding-bottom: 5px;
+}
+
+body .sorting_section .sort_select{
+padding: 7.6px 4px;
+outline: none;
+border: none;
+text-align: center;
+border-radius: 2.5px;
+box-shadow: $box_shadow;
+background: $dark_main_background;
+color:$dark_text;
+&:hover{
+    @include hover();
+    cursor: pointer;
+}
+&.light_mode{
+    box-shadow: $box_shadow_light;
+    background: $light_main_background;
+    color:$light_text;
+    &:hover{
+        background:$light_text;
+        color:$light_nav_background;
+}}}
+
+body main ul li{
+margin:10px;
+padding: 20px 10px;
+font-family: $main_font;
+font-weight: 400;
+color:$dark_text;
+border-radius: 10px;
+box-shadow: $box_shadow;
+background: $dark_nav_background;
+&:hover{
+    @include hover();
+    cursor: pointer
+}
+&.light_mode{
+    box-shadow: $box_shadow_light;
+    background: $light_nav_background;
+    color:$light_text;
+    &:hover{
+        background:$light_text;
+        color:$light_nav_background;
+}}}
+
+body main .section{
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+width: 90%;
+}
+
+
+body main .ten_percent{
+ position: fixed;
+bottom: 10px;
+left: 0;
+padding: 5px;
+box-shadow: $box_shadow;
+border-top-right-radius: 5px;
+border-bottom-right-radius: 5px;
+font-family: $header_font;
+color: $dark_text;
+background: $dark_nav_background;
+&:hover{
+    background: $dark_text;
+    color:$dark_nav_background;
+    cursor: pointer;
+}
+&.light_mode{
+    box-shadow: $box_shadow_light;
+    color: $light_text;
+    background: $light_nav_background;
+    &:hover{
+        color:$light_nav_background;
+        background: $light_text;
+}}}
+
+body main .menu_box{
+margin: 20px;
+padding: 5px;
+height: 260px;
+width: 280px;
+overflow: hidden;
+border-radius: 25px;
+box-shadow: $box_shadow;
+background: $dark_nav_background;
+&:hover{
+    background:$light_text_2;
+    cursor: pointer;
+}
+&.light_mode{
+    background: $light_nav_background;  
+    &:hover{
+        background:$light_nav_background;
+}}}
+
+body main .top_box{
+display: flex;
+}
+
+body main .top_box img{
+margin: 10px;
+margin-bottom:20px;
+height: 155px;
+width: 155px;
+border-radius: 10px;
+&:hover{
+    height: 165px;
+    width: 165px;
+    cursor: pointer;
+}}
+
+body main .top_box .star_side{
+display: flex;
+flex-direction: column;
+padding: 20px;
+width: 20%;
+color:$dark_text;
+text-align: center;
+&.light_mode{
+    color:$light_text;
+}}
+
+body main .top_box .star_side i{
+padding: 5px 20px;
+}
+
+body main .bottom_box{
+display: flex;
+}
+
+body main .bottom_box .right_bottom{
+display: flex;
+justify-content: center;
+flex-direction: column;
+flex: 75%;
+padding: 5px 5px;
+font-family: $main_font;
+color: $dark_text;
+&.light_mode{
+    color: $light_text;
+}}
+
+
+body main .bottom_box .right_bottom .product{
+font-size: 14px;
+}
+
+body main .bottom_box .right_bottom .price{
+text-decoration: underline;
+font-size: 14px;
+}
+
+body main .bottom_box button{
+height: 35px;
+padding: 5px;
+margin-right: 20px;
+outline: none;
+border: none;
+color: $dark_text;
+border-radius: 5px;
+background: $dark_main_background;
+&:hover{
+        @include hover();
+        cursor: pointer
+}
+&.light_more{
+    color: $light_text;
+    background: $light_main_background;
+}}

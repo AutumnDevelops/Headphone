@@ -1,0 +1,94 @@
+{
+"products":[
+    {
+        "class" : "earbuds",
+        "name" : "Rail® ANC Wireless Earbuds",
+        "img" : "earbuds_1a.png",
+        "price" : "99.99"
+    },
+    {
+        "class" : "earbuds",
+        "name" : "RSesh® ANC True Wireless Earbuds",
+        "img" : "earbuds_2a.png",
+        "price" : "99.99"
+    },
+    {
+        "class" : "earbuds",
+        "name" : "Push® Active True Wireless Earbuds",
+        "img" : "earbuds_3a.png",
+        "price" : "79.99"
+    },
+    {
+        "class" : "headphones",
+        "name" : "Crusher® ANC 2 Sensory Bass Headphones with Active ",
+        "img" : "headphones_1a.png",
+        "price" : "229.99"
+    },
+    {
+        "class" : "headphones",
+        "name" : "Crusher® Evo All Love Edition Sensory Bass Headphones",
+        "img" : "headphones_1c.png",
+        "price" : "229.99"
+    },
+    {
+        "class" : "headphones",
+        "name" : "Burton Crusher® Evo Sensory Bass Headphones",
+        "img" : "headphones_1d.png",
+        "price" : "146.99"
+    },
+    {
+        "class" : "earbuds",
+        "name" : "420 Grind® True Wireless Earbuds",
+        "img" : "earbuds_2b.png",
+        "price" : "62.99"
+    },
+    {
+        "class" : "speakers",
+        "name" : "Terrain™ XL Wireless Bluetooth® Speaker",
+        "img" : "speaker_1a.png",
+        "price" : "79.99"
+    },
+    {
+        "class" : "speakers",
+        "name" : "Terrain™ Mini Wireless Bluetooth® Speaker",
+        "img" : "speaker_2a.png",
+        "price" : "49.99"
+    },
+    {
+        "class" : "headphones",
+        "name" : "Doritos SLYR® Multi-Platform Wired Gaming Headset",
+        "img" : "gaming_headphones_2b.png",
+        "price" : "69.99"
+    },
+    {
+        "class" : "accessories",
+        "name" : "Ultra Low Latency Wireless Transmitter for PLYR®",
+        "img" : "transmitter_1.png",
+        "price" : "24.99"
+    },
+    {
+        "class" : "accessories",
+        "name" : "Line+ Braided Charging Cable",
+        "img" : "cable_1.png",
+        "price" : "19.99"
+    },
+    {
+        "class" : "earbuds",
+        "name" : "Dime® 2 True Wireless Earbuds",
+        "img" : "earbuds_4b.png",
+        "price" : "22.99"
+    },
+    {
+        "class" : "earbuds",
+        "name" : "Burton Mod® True Wireless Earbuds",
+        "img" : "earbuds_3b.png",
+        "price" : "48.99"
+    },
+    {
+        "class" : "headphones",
+        "name" : "Burton Crusher® Evo Sensory Bass Headphones",
+        "img" : "headphones_1d.png",
+        "price" : "146.99"
+    }
+]
+}
